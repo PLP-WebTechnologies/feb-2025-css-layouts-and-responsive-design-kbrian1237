@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Portfolio - PLP Student</title>
+  <style>
+    /* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+  --primary: #1e90ff;
+  --dark: #222;
+  --light: #f9f9f9;
+}
+
+/* Body */
+body {
+  font-family: sans-serif;
+  background-color: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+/* Navigation */
+.nav-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--primary);
+  color: white;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links li a:hover {
+  text-decoration: underline;
+}
+
+/* Main */
+.main-content {
+  padding: 1rem 0;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* Boxes (Flex) */
+.grid-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.box {
+  background-color: var(--primary);
+  color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.box:hover {
+  transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  background-color: #222;
+  color: white;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+/* Tablets (≥ 600px) */
+@media (min-width: 600px) {
+  .nav-bar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+  }
+
+  .nav-links {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .grid-layout {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .box {
+    flex: 1 1 45%;
+  }
+}
+
+/* Desktop (≥ 1024px) */
+@media (min-width: 1024px) {
+  .grid-layout {
+    justify-content: space-around;
+  }
+
+  .box {
+    flex: 1 1 20%;
+  }
+
+  .intro h2 {
+    font-size: 2rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <header class="nav-bar">
+    <h1 class="logo"> Brian's responsive design</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <section class="intro">
+      <h2>Welcome!</h2>
+      <p>This is a mobile-first responsive layout using Flexbox and media queries.</p>
+    </section>
+
+    <section class="grid-layout">
+      <div class="box">HTML</div>
+      <div class="box">CSS</div>
+      <div class="box">JavaScript</div>
+      <div class="box">React</div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Brian Kathurima. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
